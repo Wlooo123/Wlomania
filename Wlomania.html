@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Wlomania - Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        nav {
+            margin: 15px 0;
+        }
+        nav a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+        article {
+            background: #ffffff;
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background: #35424a;
+            color: #ffffff;
+        }
+        form {
+            margin: 15px 0;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function search() {
+            const query = document.querySelector('input[name="q"]').value.toLowerCase();
+            const articles = document.querySelectorAll('article');
+            articles.forEach(article => {
+                const title = article.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    article.style.display = 'block'; // Göster
+                } else {
+                    article.style.display = 'none'; // Gizle
+                }
+            });
+            return false; // Formun varsayılan davranışını engelle
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Wlomania Blog</h1>
+        <form onsubmit="return search();">
+            <input type="text" placeholder="Arama yap..." name="q" required>
+            <button type="submit">Ara</button>
+        </form>
+        <nav>
+            <a href="#about">Hakkında</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>Hakkında</h2>
+            <p>Wlomania, her türlü konu üzerine yazılar bulabileceğiniz bir blogdur. Eğitimden teknolojiye, seyahat ve hobilerle dolu yazılar sizi bekliyor.</p>
+        </section>
+
+        <section id="blog">
+            <h2>Blog Yazıları</h2>
+            <!-- Blog yazıları buraya eklenecek -->
+            <article>
+                <h3>Yapay Zeka ve Geleceği</h3>
+                <p>Yapay zeka, son yıllarda hayatımızda önemli bir yer edinmiştir. Gelecekteki etkileri hakkında daha fazla bilgi edinmek ilginizi çekebilir.</p>
+            </article>
+            <article>
+                <h3>Python ile Programlamaya Giriş</h3>
+                <p>Python, yazılım geliştirme için oldukça popüler bir dildir. Temel programlama becerilerini öğrenmek için harika bir başlangıçtır.</p>
+            </article>
+            <article>
+                <h3>Veri Bilimi Nedir?</h3>
+                <p>Veri bilimi, büyük veri setlerini analiz ederek anlamlı bilgiler çıkarmak için kullanılan bir disiplindir. Bu alanda kariyer yapmak isteyenler için birçok fırsat bulunmaktadır.</p>
+            </article>
+            <article>
+                <h3>Web Geliştirmede HTML ve CSS'in Önemi</h3>
+                <p>HTML ve CSS, web geliştirme dünyasının temel taşlarıdır. Bu teknolojilerle web sayfaları oluşturmak mümkündür.</p>
+            </article>
+            <article>
+                <h3>Sağlıklı Beslenmenin Önemi</h3>
+                <p>Sağlıklı beslenme, fiziksel ve zihinsel sağlığımız üzerinde büyük bir etkiye sahiptir. Dengeli bir diyet, genel sağlığınızı iyileştirebilir.</p>
+            </article>
+            <article>
+                <h3>Dijital Pazarlama Stratejileri</h3>
+                <p>Dijital pazarlama, günümüzde işletmeler için kritik bir rol oynamaktadır. Etkili stratejiler ile müşteri kitlenizi artırabilirsiniz.</p>
+            </article>
+            <article>
+                <h3>Yazılım Geliştirme Süreçleri</h3>
+                <p>Yazılım geliştirme, planlama, tasarım, geliştirme ve test aşamalarından oluşan karmaşık bir süreçtir. Başarılı bir yazılım projesi için bu aşamaları iyi yönetmek gereklidir.</p>
+            </article>
+            <article>
+                <h3>Kişisel Gelişim ve Hedef Belirleme</h3>
+                <p>Kişisel gelişim, bireylerin kendilerini daha iyi tanımasını ve hedeflerini belirlemesini sağlar. Bu süreçte doğru adımlar atmak önemlidir.</p>
+            </article>
+            <article>
+                <h3>Çevre Dostu Teknolojiler</h3>
+                <p>Çevre dostu teknolojiler, sürdürülebilir bir gelecek için önem taşımaktadır. Yenilenebilir enerji kaynaklarının kullanımı bu alanda önemli bir adımdır.</p>
+            </article>
+            <article>
+                <h3>Seyahat ve Kültürel Keşif</h3>
+                <p>Seyahat etmek, farklı kültürleri tanımak ve yeni yerler keşfetmek için harika bir fırsattır. Dünya üzerindeki birçok güzellik sizi bekliyor.</p>
+            </article>
+            <article>
+                <h3>Duygusal Zeka ve İletişim</h3>
+                <p>Duygusal zeka, bireylerin kendilerini ve başkalarını anlamalarına yardımcı olur. İyi bir iletişim için duygusal zekayı geliştirmek önemlidir.</p>
+            </article>
+            <article>
+                <h3>Küresel Isınma ve İklim Değişikliği</h3>
+                <p>Küresel ısınma, günümüzde en büyük çevresel sorunlardan biridir. İklim değişikliğinin etkilerini azaltmak için herkesin üzerine düşeni yapması gerekiyor.</p>
+            </article>
+            <article>
+                <h3>Finansal Okuryazarlık ve Tasarruf</h3>
+                <p>Finansal okuryazarlık, bireylerin maddi durumlarını yönetmelerine yardımcı olur. Tasarruf yapmanın yollarını öğrenmek de önemlidir.</p>
+            </article>
+            <article>
+                <h3>Yenilikçi Eğitim Yöntemleri</h3>
+                <p>Eğitimde yenilikçi yöntemler, öğrencilerin daha etkili bir şekilde öğrenmelerine yardımcı olabilir. Farklı öğretim tekniklerini denemek önemlidir.</p>
+            </article>
+            <article>
+                <h3>Oyun Geliştirme ve Tasarım</h3>
+                <p>Oyun geliştirme, yaratıcı bir süreçtir. Hem programlama hem de tasarım becerileri gerektirir.</p>
+            </article>
+            <article>
+                <h3>Sosyal Medya ve Toplumsal Etkileri</h3>
+                <p>Sosyal medya, bireyler üzerinde büyük bir etkiye sahiptir. Toplumun nasıl şekillendiğini anlamak için bu platformları incelemek önemlidir.</p>
+            </article>
+            <article>
+                <h3>Girişimcilik ve İş Fikirleri</h3>
+                <p>Girişimcilik, yeni iş fikirleri ile topluma değer katma sürecidir. Başarılı bir girişimci olmak için risk almak ve yenilikçi düşünmek gereklidir.</p>
+                </article>
+               <section id="contact">
+            <h2>İletişim</h2>
+            <p>Bana ulaşmak için <a href="mailto:mustafaberatgulerr@gmail.com">mustafaberatgulerr@gmail.com</a> üzerinden iletişime geçebilirsiniz.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wlomania. Tüm Hakları Saklıdır.</p>
+    </footer>
+</body>
+</html>
+
+            
+
